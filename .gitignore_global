@@ -1,0 +1,43 @@
+# linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# editor related
+.vscodium/
+.vscode/
+.history
+*.swp
+.idea
+
+# databases and logs
+*.log
+*.accdb
+*.db
+*.dbf
+*.mdb
+*.pdb
+*.sqlite3
+
+# binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.o
+*.class
+*.dylib
+
+# packages
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z
+*.iso

@@ -1,0 +1,25 @@
+[user]
+    name = Cem Ulus
+    email = 72698119+cemulus@users.noreply.github.com
+
+[core]
+    editor = vim
+    pager = less -F -X
+    excludesfile = ~/.gitignore_global
+
+[init]
+    defaultBranch = main
+
+[alias]
+    aliases = config --get-regexp alias
+    s = status -s
+    l = log --graph --pretty=oneline --abbrev-commit
+    branches = branch --all
+    remotes = remote --verbose
+    whoami = config user.email
+    contrib = shortlog --summary
+
+[url "git@github.com:"]
+    insteadOf = "gh:"
+    pushInsteadOf = "github:"
+    pushInsteadOf = "https://github.com/"

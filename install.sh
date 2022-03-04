@@ -1,0 +1,15 @@
+#!/bin/bash
+
+readonly SCRIPT_DIR=$PWD
+
+for i in .bashrc \
+    .bash_aliases \
+    .bash_functions \
+    .vimrc \
+    .profile \
+    .gitignore_global \
+    .gitconfig; do
+
+    ln -sf "$SCRIPT_DIR/$i" "$HOME/$i";
+    echo "$HOME/$i --> $SCRIPT_DIR/$i";
+done
