@@ -1,5 +1,6 @@
 alias code='codium'
 
+alias rm='rm --preserve-root'
 alias cd..='cd ..'
 alias cd...='cd ../..'
 alias ..='cd ..'
