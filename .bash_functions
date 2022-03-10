@@ -14,7 +14,8 @@ count() {
     if [ -z "$1" ]; then
 	    echo "${fcount} files in ${PWD##*/}"
     else
-	    echo "${fcount} files in $1"
+        path=$(readlink -f $1)
+	    echo "${fcount} files in ${path##*/}"
     fi
 }
 

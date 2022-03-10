@@ -13,6 +13,7 @@ shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=4000
 HISTFILESIZE=8000
+HISTTIMEFORMAT="%F %T "
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -86,11 +87,15 @@ if ! shopt -oq posix; then
   fi
 fi
 
+eval "$(gh completion -s bash)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_OPS="--extended"
 
 parse_git_branch() {
     BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
     if [ ! "$BRANCH" == "" ]; then
-	echo "[$BRANCH]"
+	    echo "[$BRANCH]"
     fi
 }
 
@@ -101,3 +106,4 @@ cst_directory="\[\e[1;34m\]\w\[\e[m\]"
 cst_gitbranch="\[\e[38;5;197m\]\$(parse_git_branch)\[\e[m\]"
 
 export -n PS1="$cst_chroot$cst_username:$cst_directory $cst_gitbranch$ "
+

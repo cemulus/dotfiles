@@ -1,5 +1,3 @@
-alias code='codium'
-
 alias rm='rm --preserve-root'
 alias cd..='cd ..'
 alias cd...='cd ../..'
@@ -26,6 +24,10 @@ alias dx='docker exec -it'
 alias dp='docker ps'
 alias dpa='docker ps -a'
 
+alias kubectl='minikube'
+
 alias gr='go run'
 alias gb='go build -v'
+alias gmi='go mod init'
+alias gmt='go mod tidy'
 
