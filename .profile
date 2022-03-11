@@ -12,7 +12,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-eval "$(/home/cem/.linuxbrew/bin/brew shellenv)"
+eval "$(~/.linuxbrew/bin/brew shellenv)"
 
 export MOZ_DISABLE_RDD_SANDBOX=1
 export MOZ_X11_EGL=1
