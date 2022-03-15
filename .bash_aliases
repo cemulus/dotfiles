@@ -24,7 +24,7 @@ alias dx='docker exec -it'
 alias dp='docker ps'
 alias dpa='docker ps -a'
 
-alias kubectl='minikube'
+alias kubectl='minikube kubectl --'
 
 alias gr='go run'
 alias gb='go build -v'

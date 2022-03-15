@@ -88,6 +88,8 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(gh completion -s bash)"
+eval "$(minikube completion bash)"
+eval "$(kubectl completion bash)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_DEFAULT_OPS="--extended"
