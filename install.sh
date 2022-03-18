@@ -2,11 +2,11 @@
 
 readonly SCRIPT_DIR=$PWD
 
-for i in .bashrc \
-    .bash_aliases \
-    .bash_functions \
+for i in .zshrc \
+    .zprofile \
+    .zsh_aliases \
+    .zsh_functions \
     .vimrc \
-    .profile \
     .gitignore_global \
     .gitconfig; do
 
