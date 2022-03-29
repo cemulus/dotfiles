@@ -18,6 +18,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
     git
     fasd
+    fzf
     zsh-autosuggestions
     colored-man-pages
 )
