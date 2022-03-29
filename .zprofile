@@ -9,6 +9,7 @@ fi
 
 export MOZ_DISABLE_RDD_SANDBOX=1
 export MOZ_X11_EGL=1
+export MOZ_USE_XINPUT2=1
 
 export GOPATH="$HOME/go"
 export GOROOT="/usr/local/go"

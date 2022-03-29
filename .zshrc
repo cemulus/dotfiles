@@ -15,7 +15,12 @@ COMPLETION_WAITING_DOTS="true"
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-plugins=( git colored-man-pages )
+plugins=(
+    git
+    fasd
+    zsh-autosuggestions
+    colored-man-pages
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -24,6 +29,7 @@ source $ZSH/oh-my-zsh.sh
   PROMPT+=' %{$fg[blue]%}%~%{$reset_color%} $(git_prompt_info)'
   # RPROMPT='$(git_prompt_status)'
   
+  # $(git_prompt_info)
   ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[red]%}("
   ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%} "
   ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[yellow]%} ✗%{$fg[red]%}"

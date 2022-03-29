@@ -1,4 +1,4 @@
-alias rm='rm --preserve-root'
+alias rm='rm --preserve-root -i'
 alias cd..='cd ..'
 alias cd...='cd ../..'
 alias ..='cd ..'
