@@ -18,13 +18,11 @@ alias pbcopy='xsel --clipboard --input'
 alias pbpaste='xsel --clipboard --output'
 
 alias d='docker'
-alias dr='docker run --rm -it'
+alias dr='docker run --rm -i -t'
 alias db='docker build -t'
-alias dx='docker exec -it'
+alias dx='docker exec -i -t'
 alias dp='docker ps'
 alias dpa='docker ps -a'
-
-alias kubectl='minikube kubectl --'
 
 alias gr='go run'
 alias gb='go build -v'

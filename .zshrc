@@ -19,8 +19,12 @@ plugins=(
     git
     fasd
     fzf
-    zsh-autosuggestions
+    docker
+    kubectl
     colored-man-pages
+    zsh-completions
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh

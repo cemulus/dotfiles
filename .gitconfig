@@ -35,6 +35,7 @@
     aliases = config --get-regexp alias
     s = status -s
     l = log --graph --pretty=oneline --abbrev-commit
+    la = log --oneline --decorate --all --graph
     branches = branch --all
     remotes = remote --verbose
     whoami = config user.email

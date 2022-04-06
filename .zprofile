@@ -13,4 +13,4 @@ export MOZ_USE_XINPUT2=1
 
 export GOPATH="$HOME/go"
 export GOROOT="/usr/local/go"
-export PATH=:$PATH:"$GOPATH/bin":"$GOROOT/bin"
+export PATH=$PATH:"$GOPATH/bin":"$GOROOT/bin"
