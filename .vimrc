@@ -46,6 +46,8 @@ set mouse+=a
 set shiftwidth=4
 set showbreak=+++
 set softtabstop=4
+set tabstop=4
+set expandtab
 set ruler
 set smarttab
 set autoindent

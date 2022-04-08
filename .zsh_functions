@@ -9,12 +9,12 @@ cls() {
 }
 
 count() {
-    fcount=$(ls -A $1 | wc -l)
+    local fcount=$(ls -A $1 | wc -l)
     
     if [ -z "$1" ]; then
 	    echo "${fcount} files in ${PWD##*/}"
     else
-        path=$(readlink -f $1)
+        local path=$(readlink -f $1)
 	    echo "${fcount} files in ${path##*/}"
     fi
 }

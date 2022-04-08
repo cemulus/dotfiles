@@ -19,6 +19,7 @@ plugins=(
     git
     fasd
     fzf
+    shrink-path
     docker
     kubectl
     colored-man-pages
@@ -31,7 +32,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom prompt
   PROMPT="%(?:%{$fg_bold[green]%}%n:%{$fg_bold[red]%}%n)"
-  PROMPT+=' %{$fg[blue]%}%~%{$reset_color%} $(git_prompt_info)'
+  PROMPT+=' %{$fg[blue]%}$(shrink_path -f -3)%{$reset_color%} $(git_prompt_info)'
   # RPROMPT='$(git_prompt_status)'
   
   # $(git_prompt_info)
@@ -66,7 +67,7 @@ if [ -f ~/.zsh_functions ]; then
     . ~/.zsh_functions
 fi
 
-eval "$(~/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(gh completion -s zsh)"
 eval "$(minikube completion zsh)"
 eval "$(kubectl completion zsh)"
