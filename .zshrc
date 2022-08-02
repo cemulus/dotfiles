@@ -22,6 +22,7 @@ plugins=(
     shrink-path
     docker
     kubectl
+    golang
     colored-man-pages
     zsh-completions
     zsh-autosuggestions
