@@ -68,7 +68,11 @@ if [ -f ~/.zsh_functions ]; then
     . ~/.zsh_functions
 fi
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+case "$(uname -s)" in
+    Linux*)     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)";;
+    Darwin*)    export PATH="/opt/homebrew/bin:$PATH";;
+esac
+
 eval "$(gh completion -s zsh)"
 eval "$(minikube completion zsh)"
 eval "$(kubectl completion zsh)"

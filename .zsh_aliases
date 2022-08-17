@@ -1,4 +1,17 @@
-alias rm='rm --preserve-root -i'
+case "$(uname -s)" in
+    Linux*)
+        alias pbcopy='xsel --clipboard --input'
+        alias pbpaste='xsel --clipboard --output'
+        alias rm='rm --preserve-root -i'
+        ;;
+
+    Darwin*)
+        # needs gnu coreutils
+        alias ls='gls'
+        alias rm='rm -i'
+        ;;
+esac
+
 alias cd..='cd ..'
 alias cd...='cd ../..'
 alias ..='cd ..'
@@ -14,8 +27,6 @@ alias cl='clear'
 alias wget='wget -c'
 alias hist='history | grep'
 alias myip='curl https://ipecho.net/plain; echo'
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
 alias c.='code .'
 
 alias d='docker'

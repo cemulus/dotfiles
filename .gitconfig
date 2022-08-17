@@ -41,7 +41,6 @@
     whoami = config user.email
     contrib = shortlog --summary
 
-[url "git@github.com:"]
-    insteadOf = "gh:"
-    pushInsteadOf = "github:"
-    pushInsteadOf = "https://github.com/"
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+
