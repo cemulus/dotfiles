@@ -5,6 +5,11 @@
 .Trash-*
 .nfs*
 
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
 # editor related
 .vscodium/
 .vscode/
@@ -41,3 +46,4 @@
 *.rar
 *.7z
 *.iso
+
