@@ -74,6 +74,7 @@ case "$(uname -s)" in
 esac
 
 eval "$(gh completion -s zsh)"
-eval "$(minikube completion zsh)"
+# eval "$(minikube completion zsh)"
+# eval "$(thefuck --alias)"
 eval "$(kubectl completion zsh)"
 
