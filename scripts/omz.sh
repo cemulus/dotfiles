@@ -15,7 +15,7 @@ if [[ "$(uname -s)" == "Linux" ]]; then
 	fi
 fi
 
-if [[ -d ~/.oh-my-zsh ]]; then
+if ! command -v "omz" >/dev/null 2>&1; then
 	echo "oh-my-zsh is already installed."
 	exit
 fi
