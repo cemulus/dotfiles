@@ -1,13 +1,31 @@
 #!/bin/bash
 set -Eeuo pipefail
 
-readonly SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+install_fzf() {
+    readonly SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
 
-if command -v "fzf" >/dev/null 2>&1; then
-	echo "fzf is already installed."
-	exit
-fi
+	while true; do
+        read -p "Do you want to install fzf? (y/n) " yn
+        case $yn in
+            [Yy]* ) break;;
+            [Nn]* ) return 0;;
+            * ) echo "Please answer yes or no.";;
+        esac
+    done
 
-echo "Installing fzf"
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+    if command -v "fzf" >/dev/null 2>&1; then
+        echo "fzf is already installed."
+        return 0
+    fi
+
+    if [[ -d "$HOME/.fzf" ]]; then
+        echo "fzf directory already exists."
+    else
+        echo "Installing fzf"
+        git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    fi
+
+    ~/.fzf/install
+}
+
+install_fzf

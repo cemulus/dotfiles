@@ -36,6 +36,7 @@ alias dx='docker exec -i -t'
 alias dp='docker ps'
 alias dpa='docker ps -a'
 alias dockerclean='docker system prune --all --force --volumes'
+alias "dcup"='find . -type f -name 'docker-compose.yml' -execdir sh -c "docker compose ps | grep -q 'Up ' && docker compose pull && docker compose up -d" \;
 
 alias gr='go run'
 alias gb='go build -v'
@@ -43,3 +44,4 @@ alias gmi='go mod init'
 alias gmt='go mod tidy'
 alias goclean='go clean -testcache -modcache -fuzzcache -cache'
 
+alias "??"='gh copilot suggest -t shell'

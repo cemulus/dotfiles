@@ -1,12 +1,25 @@
 #!/bin/bash
 set -Eeuo pipefail
 
-readonly SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+install_homebrew() {
+    readonly SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
 
-if command -v "brew" >/dev/null 2>&1; then
-	echo "Homebrew is already installed."
-	exit
-fi
+    while true; do
+        read -p "Do you want to install Homebrew? (y/n) " yn
+        case $yn in
+            [Yy]* ) break;;
+            [Nn]* ) return 0;;
+            * ) echo "Please answer yes or no.";;
+        esac
+    done
 
-echo "Installing Homebrew"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    if command -v "brew" >/dev/null 2>&1; then
+        echo "Homebrew is already installed."
+        return 0
+    fi
+
+    echo "Installing Homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+}
+
+install_homebrew

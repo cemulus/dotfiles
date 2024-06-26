@@ -27,12 +27,18 @@ plugins=(
     zsh-completions
     zsh-autosuggestions
     zsh-syntax-highlighting
+    gh
+    aws
+    evalcache
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # Custom prompt
   PROMPT="%(?:%{$fg_bold[green]%}%n:%{$fg_bold[red]%}%n)"
+  if [[ $IS_REMOTE_MACHINE == 1 ]]; then
+      PROMPT+='%{$reset_color%}@%{$fg_bold[blue]%}%m'
+  fi
   PROMPT+=' %{$fg[blue]%}$(shrink_path -f -3)%{$reset_color%} $(git_prompt_info)'
   # RPROMPT='$(git_prompt_status)'
   
@@ -69,11 +75,16 @@ if [ -f ~/.zsh_functions ]; then
 fi
 
 case "$(uname -s)" in
-    Linux*)     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)";;
+    Linux*)     _evalcache /home/linuxbrew/.linuxbrew/bin/brew shellenv;;
     Darwin*)    export PATH="/opt/homebrew/bin:$PATH";;
 esac
 
-eval "$(gh completion -s zsh)"
-# eval "$(minikube completion zsh)"
-eval "$(thefuck --alias)"
-# eval "$(kubectl completion zsh)"
+_evalcache gh completion -s zsh
+# _evalcache minikube completion zsh
+_evalcache thefuck --alias
+# _evalcache kubectl completion zsh
+_evalcache stripe completion --shell zsh --write-to-stdout
+
+if [ -f '${HOME}/projects/sdk/completion.zsh.inc' ]; then 
+    . '${HOME}/projects/sdk/completion.zsh.inc'; 
+fi
