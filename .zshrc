@@ -79,11 +79,11 @@ case "$(uname -s)" in
     Darwin*)    export PATH="/opt/homebrew/bin:$PATH";;
 esac
 
-_evalcache gh completion -s zsh
+command -v gh > /dev/null && _evalcache gh completion -s zsh
 # _evalcache minikube completion zsh
-_evalcache thefuck --alias
+command -v thefuck > /dev/null && _evalcache thefuck --alias
 # _evalcache kubectl completion zsh
-_evalcache stripe completion --shell zsh --write-to-stdout
+command -v stripe > /dev/null && _evalcache stripe completion --shell zsh --write-to-stdout
 
 if [ -f '${HOME}/projects/sdk/completion.zsh.inc' ]; then 
     . '${HOME}/projects/sdk/completion.zsh.inc'; 

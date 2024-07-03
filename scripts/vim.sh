@@ -2,8 +2,6 @@
 set -Eeuo pipefail
 
 install_vim_plug() {
-    readonly SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
-
 	while true; do
         read -p "Do you want to install vim-plug? (y/n) " yn
         case $yn in
@@ -13,8 +11,12 @@ install_vim_plug() {
         esac
     done
 
+    if ! command -v "vim" >/dev/null 2>&1; then
+        echo "  vim is not installed."
+    fi
+
     if [[ -f ~/.vim/autoload/plug.vim ]]; then
-        echo "vim-plug is already installed."
+        echo "  vim-plug is already installed."
         return 0
     fi
 
@@ -23,5 +25,3 @@ install_vim_plug() {
 
     vim +'PlugInstall --sync' +qa
 }
-
-install_vim_plug

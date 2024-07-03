@@ -2,8 +2,6 @@
 set -Eeuo pipefail
 
 install_homebrew() {
-    readonly SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
-
     while true; do
         read -p "Do you want to install Homebrew? (y/n) " yn
         case $yn in
@@ -14,12 +12,10 @@ install_homebrew() {
     done
 
     if command -v "brew" >/dev/null 2>&1; then
-        echo "Homebrew is already installed."
+        echo "  Homebrew is already installed."
         return 0
     fi
 
-    echo "Installing Homebrew"
+    echo "  Installing Homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 }
-
-install_homebrew
