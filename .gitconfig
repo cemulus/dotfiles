@@ -1,14 +1,14 @@
 [user]
-    name = Cem Ulus
-    email = github@cemulus.com
+	name = Cem Ulus
+	email = github@cemulus.com
 
 [core]
-    editor = vim
-    pager = "diff-so-fancy | less --tabs=4 -RFX --mouse"
-    excludesfile = ~/.gitignore_global
-    
+	editor = vim
+	pager = "diff-so-fancy | less --tabs=4 -RFX --mouse"
+	excludesfile = ~/.gitignore_global
+	
 [interactive]
-    diffFilter = "diff-so-fancy --patch"
+	diffFilter = "diff-so-fancy --patch"
 
 [color]
 	ui = true
@@ -29,17 +29,17 @@
 	whitespace = red reverse
 
 [init]
-    defaultBranch = main
+	defaultBranch = main
 
 [alias]
-    aliases = config --get-regexp alias
-    s = status -s
-    l = log --graph --pretty=oneline --abbrev-commit
-    la = log --oneline --decorate --all --graph
-    branches = branch --all
-    remotes = remote --verbose
-    whoami = config user.email
-    contrib = shortlog --summary
+	aliases = config --get-regexp alias
+	s = status -s
+	l = log --graph --pretty=oneline --abbrev-commit
+	la = log --oneline --decorate --all --graph
+	branches = branch --all
+	remotes = remote --verbose
+	whoami = config user.email
+	contrib = shortlog --summary
 
 #[url "ssh://git@github.com/"]
 #	insteadOf = https://github.com/

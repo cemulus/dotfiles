@@ -16,20 +16,20 @@ COMPLETION_WAITING_DOTS="true"
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 plugins=(
-    git
-    fasd
-    fzf
-    shrink-path
-    docker
-    kubectl
-    golang
-    colored-man-pages
-    zsh-completions
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-    gh
-    aws
-    evalcache
+	git
+	fasd
+	fzf
+	shrink-path
+	docker
+	kubectl
+	golang
+	colored-man-pages
+	zsh-completions
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	gh
+	aws
+	evalcache
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -37,7 +37,7 @@ source $ZSH/oh-my-zsh.sh
 # Custom prompt
   PROMPT="%(?:%{$fg_bold[green]%}%n:%{$fg_bold[red]%}%n)"
   if [[ $IS_REMOTE_MACHINE == 1 ]]; then
-      PROMPT+='%{$reset_color%}@%{$fg_bold[blue]%}%m'
+	  PROMPT+='%{$reset_color%}@%{$fg_bold[blue]%}%m'
   fi
   PROMPT+=' %{$fg[blue]%}$(shrink_path -f -3)%{$reset_color%} $(git_prompt_info)'
   # RPROMPT='$(git_prompt_status)'
@@ -59,24 +59,24 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='vim'
 
 if [ -f ~/.fzf.zsh ]; then
-    source ~/.fzf.zsh
-    export FZF_DEFAULT_OPS="--extended"
+	source ~/.fzf.zsh
+	export FZF_DEFAULT_OPS="--extended"
 fi
 
 
 # Alias definitions.
 if [ -f ~/.zsh_aliases ]; then
-    . ~/.zsh_aliases
+	. ~/.zsh_aliases
 fi
 
 # Function definitions.
 if [ -f ~/.zsh_functions ]; then
-    . ~/.zsh_functions
+	. ~/.zsh_functions
 fi
 
 case "$(uname -s)" in
-    Linux*)     _evalcache /home/linuxbrew/.linuxbrew/bin/brew shellenv;;
-    Darwin*)    export PATH="/opt/homebrew/bin:$PATH";;
+	Linux*)     _evalcache /home/linuxbrew/.linuxbrew/bin/brew shellenv;;
+	Darwin*)    export PATH="/opt/homebrew/bin:$PATH";;
 esac
 
 command -v gh > /dev/null && _evalcache gh completion -s zsh
@@ -86,5 +86,5 @@ command -v thefuck > /dev/null && _evalcache thefuck --alias
 command -v stripe > /dev/null && _evalcache stripe completion --shell zsh --write-to-stdout
 
 if [ -f '${HOME}/projects/sdk/completion.zsh.inc' ]; then 
-    . '${HOME}/projects/sdk/completion.zsh.inc'; 
+	. '${HOME}/projects/sdk/completion.zsh.inc'; 
 fi

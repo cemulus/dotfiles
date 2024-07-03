@@ -1,15 +1,15 @@
 case "$(uname -s)" in
-    Linux*)
-        alias pbcopy='xsel --clipboard --input'
-        alias pbpaste='xsel --clipboard --output'
-        alias rm='rm --preserve-root -i'
-        ;;
+	Linux*)
+		alias pbcopy='xsel --clipboard --input'
+		alias pbpaste='xsel --clipboard --output'
+		alias rm='rm --preserve-root -i'
+		;;
 
-    Darwin*)
-        # needs gnu coreutils
-        alias ls='gls'
-        alias rm='rm -i'
-        ;;
+	Darwin*)
+		# needs gnu coreutils
+		alias ls='gls'
+		alias rm='rm -i'
+		;;
 esac
 
 alias cd..='cd ..'
