@@ -20,7 +20,7 @@ export PATH=$PATH:"§/opt/homebrew/lib/ruby/gems/3.3.0/bin"
 # brew
 case "$(uname -s)" in
 	Linux*)  [ -d '/home/linuxbrew/.linuxbrew/bin' ] && eval /home/linuxbrew/.linuxbrew/bin/brew shellenv;;
-	Darwin*) [ -d '/opt/homebrew/bin' ] && export PATH=$PATH:"/opt/homebrew/bin";;
+	Darwin*) [ -d '/opt/homebrew/bin' ] && export PATH=$PATH:"/opt/homebrew/bin":"/opt/homebrew/sbin";;
 esac
 export HOMEBREW_NO_ANALYTICS=1
 
