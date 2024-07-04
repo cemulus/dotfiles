@@ -1,8 +1,6 @@
 completions=(
-	"gh completion -s zsh"
 	"minikube completion zsh"
 	"thefuck --alias"
-	"kubectl completion zsh"
 	"stripe completion --shell zsh --write-to-stdout"
 )
 
