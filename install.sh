@@ -17,10 +17,11 @@ for i in .zshrc \
 	.zprofile \
 	.zsh_aliases \
 	.zsh_functions \
+	.zsh_completions \
 	.vimrc \
 	.gitignore_global \
 	.gitconfig; do
 
-	ln -sf "$SCRIPT_DIR/$i" "$HOME/$i";
-	echo "$HOME/$i --> $SCRIPT_DIR/$i";
+	ln -sf "$SCRIPT_DIR/$i" "$HOME/$i"
+	echo "$HOME/$i --> $SCRIPT_DIR/$i"
 done

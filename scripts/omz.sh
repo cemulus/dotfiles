@@ -13,6 +13,7 @@ install_oh_my_zsh() {
 
 	if ! command -v "zsh" >/dev/null 2>&1; then
 		echo "  Zsh is not installed."
+		return
 	fi
 
 	if [[ -d "${ZSH:-$HOME/.oh-my-zsh}" ]]; then
@@ -26,6 +27,7 @@ install_oh_my_zsh() {
 		"zsh-completions https://github.com/zsh-users/zsh-completions"
 		"zsh-autosuggestions https://github.com/zsh-users/zsh-autosuggestions"
 		"zsh-syntax-highlighting https://github.com/zsh-users/zsh-syntax-highlighting.git"
+		"you-should-use https://github.com/MichaelAquilina/zsh-you-should-use.git"
 		"evalcache https://github.com/mroth/evalcache"
 	)
 

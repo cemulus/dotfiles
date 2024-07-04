@@ -1,11 +1,7 @@
-if [ -d "$HOME/bin" ] ; then
-	PATH="$HOME/bin:$PATH"
-fi
+[ -d "$HOME/bin" ] && PATH=$PATH:"$HOME/bin"
+[ -d "$HOME/.local/bin" ] && PATH=$PATH:"$HOME/.local/bin"
 
-if [ -d "$HOME/.local/bin" ] ; then
-	PATH="$HOME/.local/bin:$PATH"
-fi
-
+export EDITOR="vim"
 export IS_REMOTE_MACHINE=0
 
 # firefox
@@ -22,9 +18,14 @@ export PATH=$PATH:"$GOPATH/bin":"$GOROOT/bin"
 export PATH=$PATH:"§/opt/homebrew/lib/ruby/gems/3.3.0/bin"
 
 # brew
-export PATH="/opt/homebrew/sbin:$PATH"
+case "$(uname -s)" in
+	Linux*)  [ -d '/home/linuxbrew/.linuxbrew/bin' ] && eval /home/linuxbrew/.linuxbrew/bin/brew shellenv;;
+	Darwin*) [ -d '/opt/homebrew/bin' ] && export PATH=$PATH:"/opt/homebrew/bin";;
+esac
 export HOMEBREW_NO_ANALYTICS=1
 
+# fzf
+export FZF_DEFAULT_OPTS="--extended"
 
 # gcloud
-if [ -f '${HOME}/projects/sdk/path.zsh.inc' ]; then . '${HOME}/projects/sdk/path.zsh.inc'; fi
+[ -f ~/projects/sdk/path.zsh.inc ] && . ~/projects/sdk/path.zsh.inc

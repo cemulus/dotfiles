@@ -9,7 +9,7 @@ cls() {
 }
 
 count() {
-	local fcount=$(ls -A $1 | wc -l)
+	local fcount=$(ls -A $1 | wc -l | xargs)	
 	
 	if [ -z "$1" ]; then
 		echo "${fcount} files in ${PWD##*/}"

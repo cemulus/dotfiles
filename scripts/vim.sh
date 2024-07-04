@@ -13,6 +13,7 @@ install_vim_plug() {
 
 	if ! command -v "vim" >/dev/null 2>&1; then
 		echo "  vim is not installed."
+		return
 	fi
 
 	if [[ -f ~/.vim/autoload/plug.vim ]]; then
