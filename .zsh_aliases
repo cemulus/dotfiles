@@ -9,6 +9,7 @@ case "$(uname -s)" in
 		# needs gnu coreutils
 		alias ls='gls'
 		alias rm='rm -i'
+		alias date='gdate'
 		;;
 esac
 
@@ -21,7 +22,6 @@ alias ll='ls -lAhF --group-directories-first'
 alias sl='ls'
 alias lsl='ls -lAhF | less'
 alias mkdir='mkdir -pv'
-alias weather='curl wttr.in/'
 alias wl='wc -l'
 alias cl='clear'
 alias wget='wget -c'
@@ -45,3 +45,5 @@ alias gmt='go mod tidy'
 alias goclean='go clean -testcache -modcache -fuzzcache -cache'
 
 alias "??"='gh copilot suggest -t shell'
+
+unalias gops # for google/gops

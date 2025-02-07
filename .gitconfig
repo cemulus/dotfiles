@@ -1,32 +1,23 @@
 [user]
 	name = Cem Ulus
 	email = github@cemulus.com
+	signingkey = ~/.ssh/gh.pub
 
 [core]
-	editor = vim
-	pager = "diff-so-fancy | less --tabs=4 -RFX --mouse"
+    editor = vim
+	pager = delta
 	excludesfile = ~/.gitignore_global
 	
 [interactive]
-	diffFilter = "diff-so-fancy --patch"
+	diffFilter = delta --color-only
 
-[color]
-	ui = true
+[delta]
+    navigate = true
+    side-by-side = true
+    line-numbers = true
 
-[color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
-
-[color "diff"]
-	meta = 11
-	frag = magenta bold
-	func = 146 bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+[merge]
+    conflictstyle = zdiff3
 
 [init]
 	defaultBranch = main
@@ -41,8 +32,23 @@
 	whoami = config user.email
 	contrib = shortlog --summary
 
-#[url "ssh://git@github.com/"]
-#	insteadOf = https://github.com/
+[credential "https://github.com"]
+	helper = 
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !gh auth git-credential
 
-#[url "git@github.com:"]
-#	insteadOf = https://github.com/
+[gpg]
+	format = ssh
+[commit]
+	gpgSign = true
+[tag]
+	gpgSign = true
+
+# [url "ssh://git@github.com/"]
+# 	insteadOf = https://github.com/
+# test
+
+# [url "git@github.com:"]
+# 	insteadOf = https://github.com/
